@@ -1,26 +1,44 @@
+
 @import "tailwindcss";
 
+/* Defining CSS custom properties for light theme (default) */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-background: 255 255 255; /* white */
+  --color-foreground: 0 0 0; /* black */
+
+  --gray: #d1d5dc;
+
+  --dark-gray: #364153;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Defining CSS custom properties for dark theme */
+:root.dark {
+  --color-background: 36 37 53; /* #242535 */
+  --color-foreground: 255 255 255; /* white */
+
+  --dark-gray: #99a1af;
+  --gray: #4a5565;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Applying the custom properties to utility classes */
+@layer utilities {
+  .bg-background {
+    background-color: rgb(var(--color-background));
   }
-}
+  
+  .text-foreground {
+    color: rgb(var(--color-foreground));
+  }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  .dark-gray {
+    color: var(--dark-gray);
+  }
+
+  .gray {
+    color: var(--gray);
+  }
+
+  .border-gray {
+    color: var(--gray);
+  }
 }
