@@ -1,0 +1,31 @@
+import MdxLayout from "@/components/MdxLayout";
+
+<MdxLayout>
+
+# Next.js 15: What's New and Why It Matters
+
+## Introduction
+
+Next.js 15 introduces major performance and DX improvements.
+
+## Key Features
+
+- Enhanced Server Components  
+- Built-in image optimization upgrades  
+- Faster data fetching APIs  
+
+```javascript
+// Example server component
+export default async function Page() {
+  const data = await fetchData();
+  return <div>{data.title}</div>;
+}
+```
+
+### Why It Matters
+
+- Better SEO with optimized rendering
+- Reduced bundle sizes
+- Improved streaming support
+
+</MdxLayout>

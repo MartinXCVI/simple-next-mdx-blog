@@ -1,5 +1,5 @@
-
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 /* Defining CSS custom properties for light theme (default) */
 :root {
@@ -7,8 +7,11 @@
   --color-foreground: 0 0 0; /* black */
 
   --gray: #d1d5dc;
+  --blue: #1447e6;
 
   --dark-gray: #364153;
+
+  --bg-gray: #f3f4f6;
 }
 
 /* Defining CSS custom properties for dark theme */
@@ -17,13 +20,21 @@
   --color-foreground: 255 255 255; /* white */
 
   --dark-gray: #99a1af;
+
   --gray: #4a5565;
+  --blue: #2b7fff;
+
+  --bg-gray: oklch(37.3% 0.034 259.733);
 }
 
 /* Applying the custom properties to utility classes */
 @layer utilities {
   .bg-background {
     background-color: rgb(var(--color-background));
+  }
+
+  .bg-gray {
+    background-color: var(--bg-gray);
   }
   
   .text-foreground {
@@ -38,7 +49,27 @@
     color: var(--gray);
   }
 
+  .text-blue {
+    color: var(--blue);
+  }
+
   .border-gray {
-    color: var(--gray);
+    border-color: var(--gray);
+    inherits: none;
+  }
+
+  /* Overriding typography text color to use the foreground variable */
+  .prose, 
+  .prose h1, 
+  .prose h2, 
+  .prose h3, 
+  .prose h4, 
+  .prose h5, 
+  .prose h6, 
+  .prose strong, 
+  .prose p, 
+  .prose li, 
+  .prose blockquote {
+    color: rgb(var(--color-foreground)) !important;
   }
 }

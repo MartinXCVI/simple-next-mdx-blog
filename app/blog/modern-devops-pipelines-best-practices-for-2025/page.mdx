@@ -1,0 +1,35 @@
+import MdxLayout from "@/components/MdxLayout";
+
+<MdxLayout>
+
+# Modern DevOps Pipelines: Best Practices for 2025
+
+## Introduction
+
+DevOps pipelines have evolved to integrate AI-driven testing, automated security checks, and multi-cloud deployments.
+
+## Best Practices
+
+1. Shift-left testing  
+2. Continuous security scanning  
+3. Automated rollback mechanisms  
+
+```yaml
+# Example GitHub Actions workflow
+name: CI/CD
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm install && npm run build
+```
+
+## Trends in 2025
+
+- GitOps adoption
+- Infrastructure as Code
+- AI-powered performance monitoring
+
+</MdxLayout>

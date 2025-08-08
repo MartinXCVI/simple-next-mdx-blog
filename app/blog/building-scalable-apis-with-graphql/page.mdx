@@ -1,0 +1,49 @@
+import MdxLayout from "@/components/MdxLayout";
+
+<MdxLayout>
+
+# Building Scalable APIs with GraphQL
+
+## Introduction: Why GraphQL?
+
+GraphQL is a query language for APIs that gives clients the power to request exactly the data they need, improving performance and flexibility.
+
+## Key Advantages
+
+- Fetch multiple resources in a single request  
+- Avoid over-fetching and under-fetching  
+- Strongly typed schema for predictability  
+
+```graphql
+query GetUser {
+  user(id: "1") {
+    name
+    email
+    posts {
+      title
+    }
+  }
+}
+```
+
+### Scaling Strategies
+
+- Schema Stitching: Combine multiple schemas into one.
+- Query Caching: Store frequent queries in memory.
+- Pagination: Avoid massive payloads.
+
+```
+// Example resolver with pagination
+const resolvers = {
+  Query: {
+    posts: (_, { limit, offset }, { db }) =>
+      db.posts.slice(offset, offset + limit),
+  },
+};
+```
+
+## Conclusion
+
+GraphQL, when paired with good scaling practices, can handle high-traffic applications without sacrificing performance.
+
+</MdxLayout>

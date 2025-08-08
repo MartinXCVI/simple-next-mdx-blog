@@ -1,0 +1,32 @@
+import MdxLayout from "@/components/MdxLayout";
+
+<MdxLayout>
+
+# Improving Frontend Performance with Code Splitting
+
+## Introduction
+
+Code splitting allows you to load only what’s needed for the current view, reducing initial load time.
+
+## Techniques
+
+- Route-based splitting  
+- Component-level splitting  
+- Dynamic imports  
+
+```javascript
+// Dynamic import example
+const HeavyComponent = React.lazy(() => import("./HeavyComponent"));
+```
+
+### Tools
+
+- Webpack
+- Vite
+- Next.js automatic code splitting
+
+## Conclusion
+
+Code splitting is a must-have optimization for modern web apps.
+
+</MdxLayout>

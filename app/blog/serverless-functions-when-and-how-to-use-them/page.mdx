@@ -1,0 +1,38 @@
+import MdxLayout from "@/components/MdxLayout";
+
+<MdxLayout>
+
+# Serverless Functions: When and How to Use Them
+
+## Introduction
+
+Serverless architecture allows you to run backend code without managing servers, paying only for actual execution time.
+
+## Benefits
+
+- Scalability on demand  
+- Reduced operational overhead  
+- Lower costs for low-traffic workloads  
+
+```javascript
+// AWS Lambda handler example
+exports.handler = async (event) => {
+  return {
+    statusCode: 200,
+    body: JSON.stringify({ message: "Hello from Serverless!" }),
+  };
+};
+```
+
+### When to Use
+
+- APIs with unpredictable traffic
+- Scheduled jobs
+- Event-driven processes
+
+### When Not to Use
+
+- Long-running tasks
+- Low-latency real-time applications
+
+</MdxLayout>
